@@ -1,7 +1,8 @@
 export default async function handler(req, res) {
-  const query = req.query;
+  const { query } = req;
 
   const gnewsUrl = new URL('https://gnews.io/api/v4/search');
+
   for (const key in query) {
     gnewsUrl.searchParams.set(key, query[key]);
   }
